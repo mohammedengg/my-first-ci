@@ -7,13 +7,16 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME: Teddy
 
     steps:
       - name: Get the code
         uses: actions/checkout@v4
 
       - name: Say hello
-        run: echo "Hello! I am checking your project!"
+        run: echo "Hello $MY_NAME!"
+
 
       - name: Check if HTML file exists
         run: test -f index.html
