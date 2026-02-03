@@ -20,3 +20,7 @@ jobs:
 
       - name: Check if HTML file exists
         run: test -f index.html
+        
+      - name: Use secret
+        run: echo "I love my ${{ secrets.SECRET_TOY }}"
+
