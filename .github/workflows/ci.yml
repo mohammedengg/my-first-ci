@@ -1,0 +1,19 @@
+name: My First CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello! I am checking your project!"
+
+      - name: Check if HTML file exists
+        run: test -f index.html
